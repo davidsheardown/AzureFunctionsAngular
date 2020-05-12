@@ -7,11 +7,11 @@
             </li>
             <li class="sidebar-item">
                 <span class="e-icons home"></span>
-                <span class="e-text" title="home">Home</span>
+                <span routerLink = "." class="e-text" title="home">Home</span>
             </li>
             <li class="sidebar-item">
                 <span class="e-icons profile"></span>
-                <span class="e-text" title="profile">Profile</span>
+                <span routerLink="./people" class="e-text" title="profile">People</span>
             </li>
             <li class="sidebar-item">
                 <span class="e-icons info"></span>
@@ -25,6 +25,5 @@
     </div>
 </ejs-sidebar>
 <div id="main-content container-fluid col-md-12 ">
-    <div class="title">Main content</div>
-    <div class="sub-title"> Click the expand icon to open and collapse icons to close the Sidebar.</div>
+    <router-outlet></router-outlet>
 </div>
