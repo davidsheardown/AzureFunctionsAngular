@@ -7,11 +7,12 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
+
+import { PeopleModule } from './people/people.module';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
     AppRoutingModule,
     CoreModule,
     SharedModule,
+    PeopleModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
     SidebarModule    
   ],
   providers: [],

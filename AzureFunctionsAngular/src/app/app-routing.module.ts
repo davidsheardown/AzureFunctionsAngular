@@ -7,8 +7,7 @@ import { PeopleComponent } from './people/people.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'people', component: PeopleComponent}
+  {path: 'home', component: HomeComponent}
 ];
 
 @NgModule({
