@@ -14,7 +14,11 @@ export class PeopleService {
   private ApiURL:string = "https://azurefunctionsadventure.azurewebsites.net/api/person";
 
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+    ) {
+      
+     }
 
 
   getPeople(): Observable<IApiResult> {
