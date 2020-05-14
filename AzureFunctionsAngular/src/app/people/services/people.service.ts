@@ -16,9 +16,7 @@ export class PeopleService {
 
   constructor(
     private http: HttpClient
-    ) {
-      
-     }
+    ) { }
 
 
   getPeople(): Observable<IApiResult> {

@@ -2,4 +2,8 @@
 <!-- This uses our custom pipe to replace whatever is passed as the string with -"-howdy-" -->
 <p>{{PeopleTitle | testpipe: 'this'}}</p>
 
-<p>{{ErrorMsg}}</p>
+<p *ngIf="ErrorMsg != null">{{ErrorMsg}}</p>
+
+<ul>
+    <li *ngFor="let person of listOfPeople" (click)="onPersonSelect(person)">{{person.name}}</li>
+</ul>

@@ -14,6 +14,7 @@ export class PeopleComponent implements OnInit {
   PeopleTitle: string;
   ErrorMsg: string;
   Success: boolean;
+  listOfPeople: IPerson[];
 
 
   constructor(private peopleService: PeopleService) { 
@@ -29,7 +30,8 @@ export class PeopleComponent implements OnInit {
     this.peopleService.getPeople().subscribe({
       next: result => {
         if (result.success) {
-          this.ErrorMsg = 'No Errors';
+          this.ErrorMsg = null;
+          this.listOfPeople = result.entities;
         }
         else {
           this.ErrorMsg = result.errorMessage;
@@ -37,6 +39,11 @@ export class PeopleComponent implements OnInit {
       },
       error: err => this.ErrorMsg = err
     });
+  }
+
+
+  onPersonSelect(person: IPerson): void {
+    alert(person.name);
   }
 
 }
