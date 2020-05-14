@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { IPerson } from '../shared/interfaces';
+import { PeopleService } from './services/people.service';
+
 
 @Component({
   selector: 'app-people',
@@ -9,8 +12,11 @@ import { Component, OnInit } from '@angular/core';
 export class PeopleComponent implements OnInit {
 
   PeopleTitle: string;
+  ErrorMsg: string;
+  Success: boolean;
 
-  constructor() { 
+
+  constructor(private peopleService: PeopleService) { 
 
     // Just testing a custom pipe.. so the PIPE is imported/exported via the shared module
     // and not directly into say this component - meaning it is shared for any feature modules
@@ -19,6 +25,18 @@ export class PeopleComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.peopleService.getPeople().subscribe({
+      next: result => {
+        if (result.success) {
+          this.ErrorMsg = 'No Errors';
+        }
+        else {
+          this.ErrorMsg = result.errorMessage;
+        }
+      },
+      error: err => this.ErrorMsg = err
+    });
   }
 
 }

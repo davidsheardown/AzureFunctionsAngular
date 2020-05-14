@@ -3,12 +3,12 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-import { IPerson, IApiResult } from '../../shared/interfaces'
+import { IApiResult } from '../../shared/interfaces'
 
 @Injectable({
   providedIn: 'root'
 })
-export class PersonService {
+export class PeopleService {
 
   private ApiKey:string = "?code=Lj5UbnVZ1UosNGofQy4VBdR0Xn0JpUPB/1ln10c7CXEzQhcX3fVybQ==";
   private ApiURL:string = "https://azurefunctionsadventure.azurewebsites.net/api/person";
