@@ -15,6 +15,7 @@ export class PeopleComponent implements OnInit {
   ErrorMsg: string;
   Success: boolean;
   listOfPeople: IPerson[];
+  loadingFlag: boolean = true;
 
 
   constructor(private peopleService: PeopleService) { 
@@ -32,6 +33,7 @@ export class PeopleComponent implements OnInit {
         if (result.success) {
           this.ErrorMsg = null;
           this.listOfPeople = result.entities;
+          this.loadingFlag = false;
         }
         else {
           this.ErrorMsg = result.errorMessage;

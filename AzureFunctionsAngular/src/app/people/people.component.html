@@ -4,6 +4,8 @@
 
 <p *ngIf="ErrorMsg != null">{{ErrorMsg}}</p>
 
+<p *ngIf="loadingFlag == true">Lording...</p>
+
 <ul>
     <li *ngFor="let person of listOfPeople" (click)="onPersonSelect(person)">{{person.name}}</li>
 </ul>
