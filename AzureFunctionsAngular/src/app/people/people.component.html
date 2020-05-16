@@ -6,6 +6,12 @@
 
 <p *ngIf="loadingFlag == true">Lording...</p>
 
-<ul>
-    <li *ngFor="let person of listOfPeople" (click)="onPersonSelect(person)">{{person.name}}</li>
-</ul>
+<table>
+    <tbody>
+        <tr *ngFor="let person of listOfPeople">
+            <td (click)="onPersonSelect(person)">
+                <a [routerLink]="['/people', person.id]">{{person.name}}</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
