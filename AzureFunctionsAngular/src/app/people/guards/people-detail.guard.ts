@@ -13,6 +13,7 @@ export class PeopleDetailGuard implements CanActivate {
   }
   
   
+  // This checks "before" routing to the page to see if we can i.e. do we have a guid/id in the route param for example
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
